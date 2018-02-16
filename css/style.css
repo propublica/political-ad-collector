@@ -14,8 +14,11 @@ b {
 
 footer {
 	padding: 1em 0;
-	margin: 3em 1em;
-	width: 90%;
+	margin-top: 5em;
+	margin-bottom: 1em;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: baseline;
 }
 
 #contact, #contact:visited {
@@ -23,10 +26,11 @@ footer {
 	color: blue;
 	opacity: 1;
 	float: right;
+	border-bottom: 3px solid blue;
 }
 
 #contact:hover {
-	border-bottom: 3px solid blue;
+	padding-bottom: 3px;
 }
 
 #install_links {
