@@ -21,6 +21,18 @@ footer {
 	align-items: baseline;
 }
 
+#big-download {
+	background: #D0021B;
+	color: #FFF;
+	border-radius: .3em;
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 150%;
+	max-width: 66%;
+	text-decoration: none;
+}
+
 #contact, #contact:visited {
 	text-decoration: none;
 	color: blue;
