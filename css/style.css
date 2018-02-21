@@ -31,6 +31,11 @@ footer {
 	font-size: 150%;
 	max-width: 66%;
 	text-decoration: none;
+	box-shadow: 3px 5px 0px #888888;
+}
+
+#big-download:hover {
+	background: red;
 }
 
 #contact, #contact:visited {
