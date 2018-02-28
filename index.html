@@ -9,8 +9,8 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
 	</head>
 	<body><div id="install_links">
-		<a href="https://chrome.google.com/webstore/detail/facebook-political-ad-col/enliecaalhkhhihcmnbjfmmjkljlcinl" class='button'>Install for Chrome</a>
-		<a href="https://addons.mozilla.org/en-US/firefox/addon/facebook-ad-collector/" class='button'>Install for Firefox</a>
+		
+		
 	</div>
 	<div id="container">
 		<h1>The Political Ad Collector</h1>
@@ -18,7 +18,11 @@
 		<div id="blurb"><p>Politicians of all kinds are spending a lot of money to reach  voters on Facebook. Are they telling the truth? Are they saying different things to different people? <br>Help hold them accountable.</p></div>
 		<br/><br/>
 
-    	<center><a href id="big-download"></a></center>
+    	<center><a href id="big-download"></a>
+    		<br/>
+    		<div class="chrome altdownload"><p>You can also <a href="https://addons.mozilla.org/en-US/firefox/addon/facebook-ad-collector/" class='button'>Install for Firefox</a></p></div>
+    		<div class="firefox altdownload"><p>You can also <a href="https://chrome.google.com/webstore/detail/facebook-political-ad-col/enliecaalhkhhihcmnbjfmmjkljlcinl" class='button'>Install for Chrome</a></p></div>
+    	</center>
     	<br/>
     <script>
 
@@ -27,10 +31,14 @@
     		console.log("chrome");
     	    $('#big-download').text('Download For Chrome');
     	    $('#big-download').attr('href', "https://chrome.google.com/webstore/detail/facebook-political-ad-col/enliecaalhkhhihcmnbjfmmjkljlcinl");
+    	    $('.chrome').show();
+    	    $('.firefox').hide();
     	} else if(navigator.userAgent.indexOf("Firefox") != -1 ) {
     	    $('#big-download').text('Download For Firefox');
     	    $('#big-download').attr('href', "https://addons.mozilla.org/en-US/firefox/addon/facebook-ad-collector/");
     	    $('#firefox').prependTo('#instructions');
+    	    $('.firefox').show();
+    	    $('.chrome').hide();
     	} else {
     	   $('#big-download').hide();
     	}
@@ -78,7 +86,7 @@
 		<section id="start">
 			<h2>How To Start</h2>
 				<div id="instructions">
-					<div id="chrome">
+					<div class="chrome">
 					<h3>On Chrome:</h3>
 						<center><img src="chrome_v1.gif" width="90%"></center><br/>
 						<ol>
@@ -99,7 +107,7 @@
 							</li>
 						</ol>
 					</div>
-					<div id="firefox">
+					<div class="firefox">
 						<h3>On Firefox:</h3>
 						<center><img src="firefox_v1.gif" width="90%"></center><br/>
 						<ol>
