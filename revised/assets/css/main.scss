@@ -1,0 +1,331 @@
+@import "reset";
+@import "fonts";
+
+$scale-1: 0.75rem;
+$scale0:  1.00rem;
+$scale1:  $scale0 * 1.25;
+$scale2:  $scale1 * 1.25;
+$scale3:  $scale2 * 1.25;
+$scale4:  $scale3 * 1.25;
+$scale5:  $scale4 * 1.25;
+$scale6:  $scale5 * 1.25;
+
+$line-height: 1.5;
+$line-height-less: 1.2;
+$line-height-least: 1;
+
+$sm: 30em;
+$md: 50em;
+$lg: 70em;
+
+$max-width: 40em;
+
+$text: #333;
+$heading: black;
+$hover: hsl(220,60%,50%);
+$bg: white;
+$bg-alt: #eee;
+
+@mixin breakpoint-min($min) {
+	@media screen and (min-width: $min) {
+		@content;
+	}
+}
+@mixin breakpoint-range($min,$max) {
+	@media screen and (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+	@include breakpoint-min($md) {
+		font-size: percentage(18/16);
+	}
+}
+
+body {
+	color: $text;
+	font-family: Graphik, Helvetica, Arial, sans-serif;
+	line-height: $line-height;
+	background-color: $bg;
+}
+
+main {
+	max-width: $max-width;
+	padding: 0 1em 3em 1em;
+	margin: 0 auto;
+}
+
+section {
+	margin: 3em 0;
+	+ section {
+		padding-top: 3em;
+		border-top: 1px solid #ccc;
+	}
+}
+
+p {
+	margin: 1em 0;
+}
+
+h1,
+h2,
+h3 {
+	color: $heading;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: $scale2;
+	line-height: $line-height-less;
+	margin-top: 1em;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h3 {
+	font-size: $scale1;
+	margin-top: 1em;
+	+ p {
+		margin-top: 0;
+	}
+}
+
+ul {
+	list-style: disc outside none;
+	margin: 1em;
+}
+
+ol {
+	list-style: none;
+	margin: 1em;
+	counter-reset: start-from 0; /* Initiate a counter */
+	li {
+		position: relative;
+	}
+	li:before {
+		counter-increment: start-from; /* Increment the counter by 1 */
+		content: counter(start-from);  /* Use the counter as content */
+		display: block;
+		position: absolute;
+		left: -1.75em;
+		top: 0.2em;
+		font-size: $scale-1;
+		width: 1.5em;
+		height: 1.5em;
+		text-align: center;
+		color: $bg;
+		background-color: $heading;
+		border-radius: 0.75em;
+	}
+}
+
+em,
+cite {
+	font-style: italic;
+}
+
+strong {
+	color: $heading;
+	font-weight: bold;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 1px solid $hover;
+	transition: 0.2s;
+	&:hover,
+	&:focus {
+		color: $hover;
+	}
+}
+
+.site-header {
+	text-align: center;
+	background-color: $bg-alt;
+	> * {
+		padding: 0 1em;
+		@include breakpoint-min($sm) {
+			padding: 0 2em;
+		}
+	}
+}
+
+.site-header-inner {
+	max-width: $max-width * 1.5;
+	padding-top: $scale3;
+	margin: 0 auto;
+	@include breakpoint-min($md) {
+		padding-top: $scale5;
+	}
+	@include breakpoint-min($lg) {
+		padding-top: $scale6;
+	}
+}
+
+.site-title {
+	font-size: $scale4;
+	line-height: $line-height-least;
+	margin-bottom: 0.25em;
+	@include breakpoint-min($md) {
+		font-size: $scale5;
+	}
+	@include breakpoint-min($lg) {
+		font-size: $scale6;
+		margin-bottom: 0.5em;
+	}
+}
+
+.pitch {
+	margin: 1em 0 2em 0;
+	@include breakpoint-min($sm) {
+		margin-bottom: 2em;
+	}
+	@include breakpoint-min($md) {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	@include breakpoint-min($lg) {
+		margin-bottom: 3em;
+	}
+}
+
+h2.site-description {
+	font-size: $scale0;
+	font-weight: normal;
+	line-height: $line-height;
+	@include breakpoint-min($md) {
+		font-size: $scale1;
+		width: 60%;
+		text-align: left;
+		padding-left: $scale1;
+		border-left: 1px solid $heading;
+	}
+}
+
+.cta {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin: 2em 0;
+	@include breakpoint-min($md) {
+		width: 40%;
+		padding-right: $scale1;
+		margin: 0;
+	}
+	body.generic & {
+		@include breakpoint-range($sm,$md) {
+			flex-direction: row;
+		}
+	}
+	body.firefox & {
+		flex-direction: column-reverse;
+	}
+	li {
+		flex-shrink: 0;
+		@include breakpoint-range($sm,$md) {
+			margin: 0 0.5em;
+		}
+	}
+}
+
+body.chrome .cta-chrome .button,
+body.firefox .cta-firefox .button {
+	font-size: $scale1;
+}
+
+body.chrome .cta-firefox .button,
+body.firefox .cta-chrome .button {
+	color: $heading;
+	background-color: transparent;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+	border-radius: 0;
+	&:before {
+		content: "or ";
+	}
+	&:hover,
+	&:focus {
+		color: $hover;
+		border-color: $hover;
+	}
+}
+
+body.generic .cta-firefox,
+body.chrome .cta-firefox,
+body.firefox .cta-chrome {
+	margin-top: 0.5em;
+}
+
+body.generic .cta-firefox {
+	@include breakpoint-range($sm,$md) {
+		margin-top: 0;
+	}
+}
+
+.site-nav {
+	color: $heading;
+	font-weight: bold;
+	text-align: center;
+	background-color: #ddd;
+	padding: 0.5em 0;
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+	li {
+		@include breakpoint-min($sm) {
+			display: inline-block;
+		}
+	}
+	a {
+		display: block;
+		border: none;
+		@include breakpoint-min($sm) {
+			margin: 0 1em;
+		}
+	}
+}
+
+.button {
+	display: inline-block;
+	color: $bg;
+	text-decoration: none;
+	background-color: $heading;
+	padding: 0.5em 1em;
+	border: none;
+	border-radius: 0.25em;
+	&:hover,
+	&:focus {
+		color: $bg;
+		background-color: $hover;
+	}
+}
+
+.switch {
+	font-size: $scale-1;
+}
+
+.site-footer {
+	text-align: center;
+	// max-width: $max-width;
+	background-color: $bg-alt;
+	padding: 1em;
+	margin: 0 auto;
+}
+
+body.generic .switch,
+body.chrome #firefox-instructions,
+body.firefox #chrome-instructions {
+	display: none;
+}

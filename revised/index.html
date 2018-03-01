@@ -21,7 +21,7 @@
     <meta property="twitter:image" content="TKTKTKTK">
     <meta property="twitter:description" content="Politicians of all kinds are spending a lot of money to reach voters on Facebook. Help hold them accountable.">
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <link rel="shortcut icon" href="TKTKTKTK">
     <link rel="icon" type="image/png" href="TKTKTKTK" sizes="16x16">
@@ -32,57 +32,107 @@
     <link rel="apple-touch-icon" href="TKTKTKTK" sizes="180x180">
 </head>
 
-<body>
+<!-- JS note: -->
+<!-- The default body class is "generic". -->
+<!-- If the user is on Chrome, make the body class "chrome". -->
+<!-- If the user is on Firefox, make the body class "firefox". -->
+<body class="firefox">
 
 	<header class="site-header">
-		<h1 class="site-title">>The Political Ad Collector</h1>
-		<h2 class="site-description">Politicians of all kinds are spending a lot of money to reach voters on Facebook. Are they telling the truth? Are they saying different things to different people? Help hold them accountable.</h2>
-		<nav>
+		<div class="site-header-inner">
+			<h1 class="site-title">The Political Ad Collector</h1>
+			<div class="pitch">
+				<h2 class="site-description">Politicians of all kinds are spending a lot of money to reach voters on Facebook. Are they telling the truth? Are they saying different things to different people? Help hold them accountable.</h2>
+				<ul class="cta">
+					<li class="cta-chrome"><a class="button" href="https://chrome.google.com/webstore/detail/facebook-political-ad-col/enliecaalhkhhihcmnbjfmmjkljlcinl">Download for Chrome</a></li>
+					<li class="cta-firefox"><a class="button" href="https://addons.mozilla.org/en-US/firefox/addon/facebook-ad-collector/">Download for Firefox</a></li>
+				</ul> <!-- end .cta -->
+			</div> <!-- end .pitch -->
+		</div> <!-- end .header-inner -->
+		<nav class="site-nav">
 			<ul>
 				<li><a href="#how-it-works">How It Works</a></li>
 				<li><a href="#why-it-matters">Why It Matters</a></li>
 				<li><a href="#how-to-start">How to Start</a></li>
 			</ul>
-		</nav>
-	</header>
+		</nav> <!-- end .site-nav -->
+	</header> <!-- end .site-header -->
 
-	<section id="how-it-works">
-		<h2>How It Works</h2>
-		<p>The Political Ad Collector is a tool you add to your Web browser. It copies the ads you see on Facebook, so anyone, on any part of the political spectrum, can see them.</p>
-		<p><strong>We know you're probably worried about downloading software that can see things on your Facebook feed</strong>. We understand, and we want to assure you that we aren't collecting your personal information. We delete details like Facebook ID numbers and data about who has liked and shared a post. We don't record who sees what ad. <strong>This is all we collect:</strong></p>
-	</section>
+	<main>
 
-	<section id="why-it-matters">
-		<h2>Why It Matters</h2>
-		<p>Online, ads are usually seen only by the audience the advertiser wants to target, and then they disappear. This makes it difficult for the public to check them and hold advertisers, including political groups, accountable. This isn't a partisan issue. As journalists, we think it's important for our democracy to check what politicians of all stripes are saying.</p>
-		<p>Here are a few examples of what we've learned from the tool so far:</p>
-		<h3>We've found deceptive ads</h3>
-		<p>We saw scam political ads that actually masked consumer rip-offs. Some contained malware. They preyed on people's interest in partisan politics to trick them into clicking.</p>
-		<h3>We've found politicians breaking FEC disclosure rules</h3>
-		<p>Many ads both parties were failing to follow a new ruling from the Federal Election Commission saying they had to disclose who was paying for the ad. These included examples from Trump 2020 and the Democratic National Commission.</p>
-		<h3>We've found misleading facts</h3>
-		<p>During the Republican Senate primary in Alabama in 2016, a Republican super PAC ran an ad saying candidate Roy Moore didn't support President Trump about the wall on the Mexican border.</p>
-	</section>
+		<section id="how-it-works">
+			<h2>How It Works</h2>
+			<p>The Political Ad Collector is a tool you add to your Web browser. It copies the ads you see on Facebook, so anyone, on any part of the political spectrum, can see them.</p>
+			<p><strong>We know you’re probably worried about downloading software that can see things on your Facebook feed</strong>. We understand, and we want to assure you that we aren’t collecting your personal information. We delete details like Facebook ID numbers and data about who has liked and shared a post. We don’t record who sees what ad.</p>
+			<h3>What we collect</h3>
+			<ol>
+				<li>Text and links in the ad</li>
+				<li>The picture in the ad</li>
+				<li>Information Facebook provides about the ad’s target audience</li>
+			</ol>
+			<p><strong>Other information:</strong></p>
+			<ul>
+				<li>The time and date the ad was seen</li>
+				<li>The number of times the ad has been seen</li>
+				<li>The ad’s language of origin</li>
+			</ul>
+		</section> <!-- end #how-it-works -->
 
-	<section id="how-to-start">
-		<h2>How to Start</h2>
-		<ol>
-			<li>Go to <a href="https://chrome.google.com/webstore/detail/facebook-political-ad-col/enliecaalhkhhihcmnbjfmmjkljlcinl">this link</a>. It will open a new tab that takes you to the Chrome Web Store.</li>
-			<li>Click the blue button that says + ADD TO CHROME.</li>
-			<li>A little window will pop up that says “Add ‘Facebook Political Ad Collector?’ It can: Read and change your data on all facebook.com sites and projects.propublica.org.” This is the disclaimer Chrome requires us to use, but we promise we aren’t changing your Facebook data or collecting anything besides the ads. If you’re OK with that, click the white “Add extension” button.</li>
-			<li>You’ll see the Political Ad Collector icon in the top right of your browser and a note telling you it has been installed.</li>
-			<li>Click on the icon to start setting up the Political Ad Collector. You'll need to confirm your language and country, and you can read more technical information about the tool. If you accept this, click the blue Accept button.</li>
-		</ol>
-		<p>To start collecting ads, all you have to do is log on to Facebook and look at your page. The Political Ad Collector icon will now have a number next to it that shows how many ads have been collected from your page. To see those ads, just click on the Political Ad Collector icon.</p>
-	</section>
+		<section id="why-it-matters">
+			<h2>Why It Matters</h2>
+			<p>Online, ads are usually seen only by the audience the advertiser wants to target, and then they disappear. This makes it difficult for the public to check them and hold advertisers, including political groups, accountable. This isn’t a partisan issue. As journalists, we think it’s important for our democracy to check what politicians of all stripes are saying.</p>
+			<p>Here are a few examples of what we’ve learned from the tool so far:</p>
+			<h3>We’ve found deceptive ads</h3>
+			<p>We saw scam political ads that actually masked consumer rip-offs. Some contained malware. They preyed on people’s interest in partisan politics to trick them into clicking.</p>
+			<h3>We’ve found politicians breaking FEC disclosure rules</h3>
+			<p>Many ads both parties were failing to follow a new ruling from the Federal Election Commission saying they had to disclose who was paying for the ad. These included examples from Trump 2020 and the Democratic National Commission.</p>
+			<h3>We’ve found misleading facts</h3>
+			<p>During the Republican Senate primary in Alabama in 2016, a Republican super PAC ran an ad saying candidate Roy Moore didn’t support President Trump about the wall on the Mexican border.</p>
+		</section> <!-- end #why-it-matters -->
 
-	<section id="want-to-do-more">
-		<h2>Want to do more?</h2>
-		<p>If you want to tell us an ad is political, click “Political Ad.” If it’s not political, click “Normal Ad.” Sometimes ads aren’t clearly political, and that’s OK. Just choose what you think is best.</p>
-		<p>Next to the ads from your Facebook feed, you’ll also see ads that other people are seeing. You can vote whether those are political or not political too. This voting helps train our “artificial intelligence” tool so it can flag political ads.</p>
-		<p>If you want to check out political ads in the U.S., you can see the public archive here.</p>
-		<p>And if you want to help the most? Please share our tool with your friends and family on Facebook! Here's our Facebook page where we'll keep you posted on what we learn.</p>
-	</section>
+		<section id="how-to-start">
+			<h2>How to Start</h2>
+
+			<div id="chrome-instructions">
+				<h3>Instructions for Chrome</h3>
+				<!-- JS note: -->
+				<!-- On click/tap, change body class to "firefox" -->
+				<a class="switch" href="#firefox-instructions">See instructions for Firefox instead</a>
+				<ol>
+					<li>Go to <a href="https://chrome.google.com/webstore/detail/facebook-political-ad-col/enliecaalhkhhihcmnbjfmmjkljlcinl">this link</a>. It will open a new tab that takes you to the Chrome Web Store.</li>
+					<li>Click the blue button that says + ADD TO CHROME.</li>
+					<li>A little window will pop up that says “Add ‘Facebook Political Ad Collector?’ It can: Read and change your data on all facebook.com sites and projects.propublica.org.” This is the disclaimer Chrome requires us to use, but we promise we aren’t changing your Facebook data or collecting anything besides the ads. If you’re OK with that, click the white “Add extension” button.</li>
+					<li>You’ll see the Political Ad Collector icon in the top right of your browser and a note telling you it has been installed.</li>
+					<li>Click on the icon to start setting up the Political Ad Collector. You’ll need to confirm your language and country, and you can read more technical information about the tool. If you accept this, click the blue Accept button.</li>
+				</ol>
+			</div> <!-- end #chrome-instructions -->
+
+			<div id="firefox-instructions">
+				<h3>Instructions for Firefox</h3>
+				<!-- JS note: -->
+				<!-- On click/tap, change body class to "firefox" -->
+				<a class="switch" href="#chrome-instructions">See instructions for Chrome instead</a>
+				<ol>
+					<li>Go to <a href="https://addons.mozilla.org/en-US/firefox/addon/facebook-ad-collector/">this link</a>. It will open a new tab that takes you to the Firefox Add-ons store.</li>
+					<li>Click the blue button that says + Add to Firefox. You may see a small window that says “addons.mozilla.org Firefox prevented this site from asking you to install software on your computer.” Please click the blue Allow button.</li>
+					<li>The small file will download, and you will then see another little window that says “Add Facebook Political Ad Collector? It requires your permission to: Access your data for sites in the facebook.com domain, Access your data for projects.propublica.org, Store unlimited amount of client-side data.” This is the disclaimer Firefox requires us to use, but we promise we aren’t accessing anything besides the ads on Facebook. If you’re OK with that, click the blue Add button.</li>
+					<li>Another small window will tell you the Facebook Political Ad Collector has been added to Firefox. Click OK.</li>
+					<li>You’ll see the Political Ad Collector icon in the top right of your browser. Click on the icon to start setting up the Political Ad Collector. You’ll need to confirm your language and country, and you can read more technical information about the tool. If you accept this, click the blue Accept button.</li>
+				</ol>
+			</div> <!-- end #firefox-instructions -->
+
+			<p>To start collecting ads, all you have to do is log on to Facebook and look at your page. The Political Ad Collector icon will now have a number next to it that shows how many ads have been collected from your page. To see those ads, just click on the Political Ad Collector icon.</p>
+		</section> <!-- end #how-to-start -->
+
+		<section id="want-to-do-more">
+			<h2>Want to do more?</h2>
+			<p>If you want to tell us an ad is political, click “Political Ad.” If it’s not political, click “Normal Ad.” Sometimes ads aren’t clearly political, and that’s OK. Just choose what you think is best.</p>
+			<p>Next to the ads from your Facebook feed, you’ll also see ads that other people are seeing. You can vote whether those are political or not political too. This voting helps train our “artificial intelligence” tool so it can flag political ads.</p>
+			<p>If you want to check out political ads in the U.S., you can see the public archive here.</p>
+			<p>And if you want to help the most? Please share our tool with your friends and family on Facebook! Here’s our Facebook page where we’ll keep you posted on what we learn.</p>
+		</section> <!-- end #want-to-do-more -->
+
+	</main>
 
 	<footer class="site-footer">
 		<a href="https://www.propublica.org/">ProPublica</a>

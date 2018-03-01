@@ -1,0 +1,315 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'Graphik';
+  src: url(../fonts/Graphik-Regular-Web.woff2) format("woff2"), url(../fonts/Graphik-Regular-Web.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Graphik';
+  src: url(../fonts/Graphik-RegularItalic-Web.woff2) format("woff2"), url(../fonts/Graphik-RegularItalic-Web.woff2) format("woff");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: 'Graphik';
+  src: url(../fonts/Graphik-Semibold-Web.woff2) format("woff2"), url(../fonts/Graphik-Semibold-Web.woff) format("woff");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'Graphik';
+  src: url(../fonts/Graphik-SemiboldItalic-Web.woff2) format("woff2"), url(../fonts/Graphik-SemiboldItalic-Web.woff) format("woff");
+  font-weight: bold;
+  font-style: italic; }
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 100%; }
+  @media screen and (min-width: 50em) {
+    html {
+      font-size: 112.5%; } }
+
+body {
+  color: #333;
+  font-family: Graphik, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background-color: white; }
+
+main {
+  max-width: 40em;
+  padding: 0 1em 3em 1em;
+  margin: 0 auto; }
+
+section {
+  margin: 3em 0; }
+  section + section {
+    padding-top: 3em;
+    border-top: 1px solid #ccc; }
+
+p {
+  margin: 1em 0; }
+
+h1,
+h2,
+h3 {
+  color: black;
+  font-weight: bold; }
+
+h2 {
+  font-size: 1.5625rem;
+  line-height: 1.2;
+  margin-top: 1em; }
+  h2:first-child {
+    margin-top: 0; }
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 1em; }
+  h3 + p {
+    margin-top: 0; }
+
+ul {
+  list-style: disc outside none;
+  margin: 1em; }
+
+ol {
+  list-style: none;
+  margin: 1em;
+  counter-reset: start-from 0;
+  /* Initiate a counter */ }
+  ol li {
+    position: relative; }
+  ol li:before {
+    counter-increment: start-from;
+    /* Increment the counter by 1 */
+    content: counter(start-from);
+    /* Use the counter as content */
+    display: block;
+    position: absolute;
+    left: -1.75em;
+    top: 0.2em;
+    font-size: 0.75rem;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-radius: 0.75em; }
+
+em,
+cite {
+  font-style: italic; }
+
+strong {
+  color: black;
+  font-weight: bold; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #3366cc;
+  transition: 0.2s; }
+  a:hover, a:focus {
+    color: #3366cc; }
+
+.site-header {
+  text-align: center;
+  background-color: #eee; }
+  .site-header > * {
+    padding: 0 1em; }
+    @media screen and (min-width: 30em) {
+      .site-header > * {
+        padding: 0 2em; } }
+
+.site-header-inner {
+  max-width: 60em;
+  padding-top: 1.953125rem;
+  margin: 0 auto; }
+  @media screen and (min-width: 50em) {
+    .site-header-inner {
+      padding-top: 3.0517578125rem; } }
+  @media screen and (min-width: 70em) {
+    .site-header-inner {
+      padding-top: 3.8146972656rem; } }
+
+.site-title {
+  font-size: 2.44140625rem;
+  line-height: 1;
+  margin-bottom: 0.25em; }
+  @media screen and (min-width: 50em) {
+    .site-title {
+      font-size: 3.0517578125rem; } }
+  @media screen and (min-width: 70em) {
+    .site-title {
+      font-size: 3.8146972656rem;
+      margin-bottom: 0.5em; } }
+
+.pitch {
+  margin: 1em 0 2em 0; }
+  @media screen and (min-width: 30em) {
+    .pitch {
+      margin-bottom: 2em; } }
+  @media screen and (min-width: 50em) {
+    .pitch {
+      display: flex;
+      flex-direction: row-reverse; } }
+  @media screen and (min-width: 70em) {
+    .pitch {
+      margin-bottom: 3em; } }
+
+h2.site-description {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5; }
+  @media screen and (min-width: 50em) {
+    h2.site-description {
+      font-size: 1.25rem;
+      width: 60%;
+      text-align: left;
+      padding-left: 1.25rem;
+      border-left: 1px solid black; } }
+
+.cta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2em 0; }
+  @media screen and (min-width: 50em) {
+    .cta {
+      width: 40%;
+      padding-right: 1.25rem;
+      margin: 0; } }
+  @media screen and (min-width: 30em) and (max-width: 50em) {
+    body.generic .cta {
+      flex-direction: row; } }
+  body.firefox .cta {
+    flex-direction: column-reverse; }
+  .cta li {
+    flex-shrink: 0; }
+    @media screen and (min-width: 30em) and (max-width: 50em) {
+      .cta li {
+        margin: 0 0.5em; } }
+
+body.chrome .cta-chrome .button,
+body.firefox .cta-firefox .button {
+  font-size: 1.25rem; }
+
+body.chrome .cta-firefox .button,
+body.firefox .cta-chrome .button {
+  color: black;
+  background-color: transparent;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0; }
+  body.chrome .cta-firefox .button:before,
+  body.firefox .cta-chrome .button:before {
+    content: "or "; }
+  body.chrome .cta-firefox .button:hover, body.chrome .cta-firefox .button:focus,
+  body.firefox .cta-chrome .button:hover,
+  body.firefox .cta-chrome .button:focus {
+    color: #3366cc;
+    border-color: #3366cc; }
+
+body.generic .cta-firefox,
+body.chrome .cta-firefox,
+body.firefox .cta-chrome {
+  margin-top: 0.5em; }
+
+@media screen and (min-width: 30em) and (max-width: 50em) {
+  body.generic .cta-firefox {
+    margin-top: 0; } }
+
+.site-nav {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ddd;
+  padding: 0.5em 0; }
+  .site-nav ul {
+    list-style: none;
+    margin: 0; }
+  @media screen and (min-width: 30em) {
+    .site-nav li {
+      display: inline-block; } }
+  .site-nav a {
+    display: block;
+    border: none; }
+    @media screen and (min-width: 30em) {
+      .site-nav a {
+        margin: 0 1em; } }
+
+.button {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: black;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.25em; }
+  .button:hover, .button:focus {
+    color: white;
+    background-color: #3366cc; }
+
+.switch {
+  font-size: 0.75rem; }
+
+.site-footer {
+  text-align: center;
+  background-color: #eee;
+  padding: 1em;
+  margin: 0 auto; }
+
+body.generic .switch,
+body.chrome #firefox-instructions,
+body.firefox #chrome-instructions {
+  display: none; }
+
+/*# sourceMappingURL=main.css.map */
