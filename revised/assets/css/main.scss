@@ -1,5 +1,9 @@
+// IMPORTS -------------------------- */
+
 @import "reset";
 @import "fonts";
+
+// TYPOGRAPHY ----------------------- */
 
 $scale-1: 0.75rem;
 $scale0:  1.00rem;
@@ -14,17 +18,26 @@ $line-height: 1.5;
 $line-height-less: 1.2;
 $line-height-least: 1;
 
+
+// COLORS --------------------------- */
+
+$fb-1: #3b5998;
+$fb-2: #8b9dc3;
+$fb-3: #dfe3ee;
+$fb-4: #f0efee;
+$text: #333;
+$text-alt: black;
+$bg: white;
+$highlight: #f33;
+
+
+// BREAKPOINTS ---------------------- */
+
 $sm: 30em;
 $md: 50em;
 $lg: 70em;
 
-$max-width: 40em;
-
-$text: #333;
-$heading: black;
-$hover: hsl(220,60%,50%);
-$bg: white;
-$bg-alt: #eee;
+$max-width: 40rem;
 
 @mixin breakpoint-min($min) {
 	@media screen and (min-width: $min) {
@@ -36,6 +49,9 @@ $bg-alt: #eee;
 		@content;
 	}
 }
+
+
+/* GLOBAL ELEMENTS ------------------ */
 
 * {
 	box-sizing: border-box;
@@ -59,13 +75,16 @@ main {
 	max-width: $max-width;
 	padding: 0 1em 3em 1em;
 	margin: 0 auto;
+	@include breakpoint-min($lg) {
+		padding: 0;
+	}
 }
 
 section {
 	margin: 3em 0;
 	+ section {
 		padding-top: 3em;
-		border-top: 1px solid #ccc;
+		border-top: 6px solid $fb-4;
 	}
 }
 
@@ -76,7 +95,7 @@ p {
 h1,
 h2,
 h3 {
-	color: $heading;
+	color: $fb-1;
 	font-weight: bold;
 }
 
@@ -99,31 +118,39 @@ h3 {
 
 ul {
 	list-style: disc outside none;
-	margin: 1em;
+	margin: 1em 0 0 1.5em;
 }
 
 ol {
 	list-style: none;
-	margin: 1em;
+	margin: 1em 0 0 1.5em;
 	counter-reset: start-from 0; /* Initiate a counter */
 	li {
 		position: relative;
+		+ li {
+			margin-top: 0.5em;
+		}
 	}
 	li:before {
 		counter-increment: start-from; /* Increment the counter by 1 */
 		content: counter(start-from);  /* Use the counter as content */
 		display: block;
 		position: absolute;
-		left: -1.75em;
+		left: -2em;
 		top: 0.2em;
 		font-size: $scale-1;
 		width: 1.5em;
 		height: 1.5em;
 		text-align: center;
 		color: $bg;
-		background-color: $heading;
+		background-color: $fb-1;
 		border-radius: 0.75em;
 	}
+}
+
+img {
+	display: block;
+	width: 100%;
 }
 
 em,
@@ -132,43 +159,44 @@ cite {
 }
 
 strong {
-	color: $heading;
+	color: $text-alt;
 	font-weight: bold;
 }
 
 a {
 	color: inherit;
 	text-decoration: none;
-	border-bottom: 1px solid $hover;
+	border-bottom: 1px solid $fb-2;
 	transition: 0.2s;
 	&:hover,
 	&:focus {
-		color: $hover;
+		color: $fb-2;
+		border-color: $fb-3;
 	}
 }
 
+
+/* HEADER --------------------------- */
+
 .site-header {
 	text-align: center;
-	background-color: $bg-alt;
-	> * {
-		padding: 0 1em;
-		@include breakpoint-min($sm) {
-			padding: 0 2em;
-		}
-	}
+	background-color: $fb-3;
 }
 
 .site-header-inner {
 	max-width: $max-width * 1.5;
-	padding-top: $scale3;
+	padding: $scale3 1em 0 1em;
 	margin: 0 auto;
 	@include breakpoint-min($md) {
 		padding-top: $scale5;
 	}
 	@include breakpoint-min($lg) {
-		padding-top: $scale6;
+		padding-top: $scale6 0 0 0;
 	}
 }
+
+
+/* TITLE ---------------------------- */
 
 .site-title {
 	font-size: $scale4;
@@ -182,6 +210,9 @@ a {
 		margin-bottom: 0.5em;
 	}
 }
+
+
+/* DESCRIPTION / CALL TO ACTION ----- */
 
 .pitch {
 	margin: 1em 0 2em 0;
@@ -197,7 +228,11 @@ a {
 	}
 }
 
-h2.site-description {
+
+/* DESCRIPTION ---------------------- */
+
+.site-description {
+	color: $text-alt;
 	font-size: $scale0;
 	font-weight: normal;
 	line-height: $line-height;
@@ -205,10 +240,13 @@ h2.site-description {
 		font-size: $scale1;
 		width: 60%;
 		text-align: left;
-		padding-left: $scale1;
-		border-left: 1px solid $heading;
+		padding: 0 $scale1;
+		border-left: 1px solid $fb-2;
 	}
 }
+
+
+/* CALL TO ACTION ------------------- */
 
 .cta {
 	list-style: none;
@@ -220,15 +258,15 @@ h2.site-description {
 	margin: 2em 0;
 	@include breakpoint-min($md) {
 		width: 40%;
-		padding-right: $scale1;
+		padding: 0 $scale1;
 		margin: 0;
 	}
-	body.generic & {
+	.generic & {
 		@include breakpoint-range($sm,$md) {
 			flex-direction: row;
 		}
 	}
-	body.firefox & {
+	.firefox & {
 		flex-direction: column-reverse;
 	}
 	li {
@@ -239,45 +277,61 @@ h2.site-description {
 	}
 }
 
-body.chrome .cta-chrome .button,
-body.firefox .cta-firefox .button {
+.button {
+	display: inline-block;
+	color: $bg;
+	text-decoration: none;
+	background-color: $text-alt;
+	padding: 0.5em 1em;
+	border: none;
+	border-radius: 0.25em;
+	&:hover,
+	&:focus {
+		color: $bg;
+		background-color: $fb-1;
+	}
+}
+
+.chrome .cta-chrome .button,
+.firefox .cta-firefox .button {
 	font-size: $scale1;
 }
 
-body.chrome .cta-firefox .button,
-body.firefox .cta-chrome .button {
-	color: $heading;
+.chrome .cta-firefox .button,
+.firefox .cta-chrome .button {
+	color: $text-alt;
 	background-color: transparent;
 	padding: 0;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid $fb-2;
 	border-radius: 0;
 	&:before {
 		content: "or ";
 	}
 	&:hover,
 	&:focus {
-		color: $hover;
-		border-color: $hover;
+		color: $fb-1;
 	}
 }
 
-body.generic .cta-firefox,
-body.chrome .cta-firefox,
-body.firefox .cta-chrome {
+.generic .cta-firefox,
+.chrome .cta-firefox,
+.firefox .cta-chrome {
 	margin-top: 0.5em;
 }
 
-body.generic .cta-firefox {
+.generic .cta-firefox {
 	@include breakpoint-range($sm,$md) {
 		margin-top: 0;
 	}
 }
 
+
+/* NAVIGATION ----------------------- */
+
 .site-nav {
-	color: $heading;
-	font-weight: bold;
+	color: $fb-3;
 	text-align: center;
-	background-color: #ddd;
+	background-color: $fb-1;
 	padding: 0.5em 0;
 	ul {
 		list-style: none;
@@ -294,38 +348,93 @@ body.generic .cta-firefox {
 		@include breakpoint-min($sm) {
 			margin: 0 1em;
 		}
+		&:hover,
+		&:focus {
+			color: $bg;
+		}
 	}
 }
 
-.button {
-	display: inline-block;
-	color: $bg;
-	text-decoration: none;
-	background-color: $heading;
-	padding: 0.5em 1em;
-	border: none;
-	border-radius: 0.25em;
-	&:hover,
-	&:focus {
-		color: $bg;
-		background-color: $hover;
+
+/* HOW IT WORKS --------------------- */
+
+.what-we-collect {
+	background-color: $fb-4;
+	padding: 0.5em 0.5em 1.5em 0.5em;
+	margin: 2em 0;
+	@include breakpoint-min($sm) {
+		padding: $scale1;
 	}
+	@include breakpoint-min($lg) {
+		display: flex;
+		align-items: center;
+		width: $max-width * 1.5;
+		margin-left: -((($max-width * 1.5) - $max-width) / 2);
+		h3 {
+			margin-top: 0;
+		}
+	}
+	li:before {
+		background-color: $highlight;
+	}
+}
+
+.collect-image {
+	@include breakpoint-min($lg) {
+		width: 40%;
+		padding-right: $scale1;
+	}
+}
+
+.collect-text {
+	@include breakpoint-min($lg) {
+		width: 60%;
+		padding-left: $scale1;
+	}
+}
+
+
+/* WHY IT MATTERS ------------------- */
+
+#why-it-matters {
+	padding-top: 0;
+	border: none;
+}
+
+
+/* HOW TO START --------------------- */
+
+.generic .switch,
+.chrome #firefox-instructions,
+.firefox #chrome-instructions {
+	display: none;
 }
 
 .switch {
 	font-size: $scale-1;
 }
 
-.site-footer {
-	text-align: center;
-	// max-width: $max-width;
-	background-color: $bg-alt;
-	padding: 1em;
-	margin: 0 auto;
+.demo {
+	margin: 1em 0 2em 0;
 }
 
-body.generic .switch,
-body.chrome #firefox-instructions,
-body.firefox #chrome-instructions {
-	display: none;
+
+/* FOOTER --------------------------- */
+
+.site-footer {
+	text-align: center;
+	background-color: $fb-3;
+	padding: 2em 1em 3em 1em;
+	margin: 3em auto 0 auto;
+	@include breakpoint-min($lg) {
+		margin-top: 6em;
+	}
+}
+
+.logo {
+	display: inline-block;
+	vertical-align: -0.2em;
+	width: 9em;
+	margin-left: 0.25em;
+	border: none;
 }
