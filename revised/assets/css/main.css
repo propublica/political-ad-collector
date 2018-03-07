@@ -1,0 +1,377 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'Graphik';
+  src: url(../fonts/Graphik-Regular-Web.woff2) format("woff2"), url(../fonts/Graphik-Regular-Web.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Graphik';
+  src: url(../fonts/Graphik-RegularItalic-Web.woff2) format("woff2"), url(../fonts/Graphik-RegularItalic-Web.woff2) format("woff");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: 'Graphik';
+  src: url(../fonts/Graphik-Semibold-Web.woff2) format("woff2"), url(../fonts/Graphik-Semibold-Web.woff) format("woff");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'Graphik';
+  src: url(../fonts/Graphik-SemiboldItalic-Web.woff2) format("woff2"), url(../fonts/Graphik-SemiboldItalic-Web.woff) format("woff");
+  font-weight: bold;
+  font-style: italic; }
+/* GLOBAL ELEMENTS ------------------ */
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 100%; }
+  @media screen and (min-width: 50em) {
+    html {
+      font-size: 112.5%; } }
+
+body {
+  color: #333;
+  font-family: Graphik, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background-color: white; }
+
+main {
+  max-width: 40rem;
+  padding: 0 1em 3em 1em;
+  margin: 0 auto; }
+  @media screen and (min-width: 70em) {
+    main {
+      padding: 0; } }
+
+section {
+  margin: 3em 0; }
+  section + section {
+    padding-top: 3em;
+    border-top: 6px solid #f0efee; }
+
+p {
+  margin: 1em 0; }
+
+h1,
+h2,
+h3 {
+  color: #3b5998;
+  font-weight: bold; }
+
+h2 {
+  font-size: 1.5625rem;
+  line-height: 1.2;
+  margin-top: 1em; }
+  h2:first-child {
+    margin-top: 0; }
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 1em; }
+  h3 + p {
+    margin-top: 0; }
+
+ul {
+  list-style: disc outside none;
+  margin: 1em 0 0 1.5em; }
+
+ol {
+  list-style: none;
+  margin: 1em 0 0 1.5em;
+  counter-reset: start-from 0;
+  /* Initiate a counter */ }
+  ol li {
+    position: relative; }
+    ol li + li {
+      margin-top: 0.5em; }
+  ol li:before {
+    counter-increment: start-from;
+    /* Increment the counter by 1 */
+    content: counter(start-from);
+    /* Use the counter as content */
+    display: block;
+    position: absolute;
+    left: -2em;
+    top: 0.2em;
+    font-size: 0.75rem;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    color: white;
+    background-color: #3b5998;
+    border-radius: 0.75em; }
+
+img {
+  display: block;
+  width: 100%; }
+
+em,
+cite {
+  font-style: italic; }
+
+strong {
+  color: black;
+  font-weight: bold; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #8b9dc3;
+  transition: 0.2s; }
+  a:hover, a:focus {
+    color: #8b9dc3;
+    border-color: #dfe3ee; }
+
+/* HEADER --------------------------- */
+.site-header {
+  text-align: center;
+  background-color: #dfe3ee; }
+
+.site-header-inner {
+  max-width: 60rem;
+  padding: 1.953125rem 1em 0 1em;
+  margin: 0 auto; }
+  @media screen and (min-width: 50em) {
+    .site-header-inner {
+      padding-top: 3.0517578125rem; } }
+  @media screen and (min-width: 70em) {
+    .site-header-inner {
+      padding-top: 3.8146972656rem 0 0 0; } }
+
+/* TITLE ---------------------------- */
+.site-title {
+  font-size: 2.44140625rem;
+  line-height: 1;
+  margin-bottom: 0.25em; }
+  @media screen and (min-width: 50em) {
+    .site-title {
+      font-size: 3.0517578125rem; } }
+  @media screen and (min-width: 70em) {
+    .site-title {
+      font-size: 3.8146972656rem;
+      margin-bottom: 0.5em; } }
+
+/* DESCRIPTION / CALL TO ACTION ----- */
+.pitch {
+  margin: 1em 0 2em 0; }
+  @media screen and (min-width: 30em) {
+    .pitch {
+      margin-bottom: 2em; } }
+  @media screen and (min-width: 50em) {
+    .pitch {
+      display: flex;
+      flex-direction: row-reverse; } }
+  @media screen and (min-width: 70em) {
+    .pitch {
+      margin-bottom: 3em; } }
+
+/* DESCRIPTION ---------------------- */
+.site-description {
+  color: black;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5; }
+  @media screen and (min-width: 50em) {
+    .site-description {
+      font-size: 1.25rem;
+      width: 60%;
+      text-align: left;
+      padding: 0 1.25rem;
+      border-left: 1px solid #8b9dc3; } }
+
+/* CALL TO ACTION ------------------- */
+.cta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2em 0; }
+  @media screen and (min-width: 50em) {
+    .cta {
+      width: 40%;
+      padding: 0 1.25rem;
+      margin: 0; } }
+  @media screen and (min-width: 30em) and (max-width: 50em) {
+    .generic .cta {
+      flex-direction: row; } }
+  .firefox .cta {
+    flex-direction: column-reverse; }
+  .cta li {
+    flex-shrink: 0; }
+    @media screen and (min-width: 30em) and (max-width: 50em) {
+      .cta li {
+        margin: 0 0.5em; } }
+
+.button {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: black;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.25em; }
+  .button:hover, .button:focus {
+    color: white;
+    background-color: #3b5998; }
+
+.chrome .cta-chrome .button,
+.firefox .cta-firefox .button {
+  font-size: 1.25rem; }
+
+.chrome .cta-firefox .button,
+.firefox .cta-chrome .button {
+  color: black;
+  background-color: transparent;
+  padding: 0;
+  border-bottom: 1px solid #8b9dc3;
+  border-radius: 0; }
+  .chrome .cta-firefox .button:before,
+  .firefox .cta-chrome .button:before {
+    content: "or "; }
+  .chrome .cta-firefox .button:hover, .chrome .cta-firefox .button:focus,
+  .firefox .cta-chrome .button:hover,
+  .firefox .cta-chrome .button:focus {
+    color: #3b5998; }
+
+.generic .cta-firefox,
+.chrome .cta-firefox,
+.firefox .cta-chrome {
+  margin-top: 0.5em; }
+
+@media screen and (min-width: 30em) and (max-width: 50em) {
+  .generic .cta-firefox {
+    margin-top: 0; } }
+
+/* NAVIGATION ----------------------- */
+.site-nav {
+  color: #dfe3ee;
+  text-align: center;
+  background-color: #3b5998;
+  padding: 0.5em 0; }
+  .site-nav ul {
+    list-style: none;
+    margin: 0; }
+  @media screen and (min-width: 30em) {
+    .site-nav li {
+      display: inline-block; } }
+  .site-nav a {
+    display: block;
+    border: none; }
+    @media screen and (min-width: 30em) {
+      .site-nav a {
+        margin: 0 1em; } }
+    .site-nav a:hover, .site-nav a:focus {
+      color: white; }
+
+/* HOW IT WORKS --------------------- */
+.what-we-collect {
+  background-color: #f0efee;
+  padding: 0.5em 0.5em 1.5em 0.5em;
+  margin: 2em 0; }
+  @media screen and (min-width: 30em) {
+    .what-we-collect {
+      padding: 1.25rem; } }
+  @media screen and (min-width: 70em) {
+    .what-we-collect {
+      display: flex;
+      align-items: center;
+      width: 60rem;
+      margin-left: -10rem; }
+      .what-we-collect h3 {
+        margin-top: 0; } }
+  .what-we-collect li:before {
+    background-color: #f33; }
+
+@media screen and (min-width: 70em) {
+  .collect-image {
+    width: 40%;
+    padding-right: 1.25rem; } }
+
+@media screen and (min-width: 70em) {
+  .collect-text {
+    width: 60%;
+    padding-left: 1.25rem; } }
+
+/* WHY IT MATTERS ------------------- */
+#why-it-matters {
+  padding-top: 0;
+  border: none; }
+
+/* HOW TO START --------------------- */
+.generic .switch,
+.chrome #firefox-instructions,
+.firefox #chrome-instructions {
+  display: none; }
+
+.switch {
+  font-size: 0.75rem; }
+
+.demo {
+  margin: 1em 0 2em 0; }
+
+/* FOOTER --------------------------- */
+.site-footer {
+  text-align: center;
+  background-color: #dfe3ee;
+  padding: 2em 1em 3em 1em;
+  margin: 3em auto 0 auto; }
+  @media screen and (min-width: 70em) {
+    .site-footer {
+      margin-top: 6em; } }
+
+.logo {
+  display: inline-block;
+  vertical-align: -0.2em;
+  width: 9em;
+  margin-left: 0.25em;
+  border: none; }
+
+/*# sourceMappingURL=main.css.map */

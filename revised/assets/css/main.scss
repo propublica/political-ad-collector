@@ -1,0 +1,440 @@
+// IMPORTS -------------------------- */
+
+@import "reset";
+@import "fonts";
+
+// TYPOGRAPHY ----------------------- */
+
+$scale-1: 0.75rem;
+$scale0:  1.00rem;
+$scale1:  $scale0 * 1.25;
+$scale2:  $scale1 * 1.25;
+$scale3:  $scale2 * 1.25;
+$scale4:  $scale3 * 1.25;
+$scale5:  $scale4 * 1.25;
+$scale6:  $scale5 * 1.25;
+
+$line-height: 1.5;
+$line-height-less: 1.2;
+$line-height-least: 1;
+
+
+// COLORS --------------------------- */
+
+$fb-1: #3b5998;
+$fb-2: #8b9dc3;
+$fb-3: #dfe3ee;
+$fb-4: #f0efee;
+$text: #333;
+$text-alt: black;
+$bg: white;
+$highlight: #f33;
+
+
+// BREAKPOINTS ---------------------- */
+
+$sm: 30em;
+$md: 50em;
+$lg: 70em;
+
+$max-width: 40rem;
+
+@mixin breakpoint-min($min) {
+	@media screen and (min-width: $min) {
+		@content;
+	}
+}
+@mixin breakpoint-range($min,$max) {
+	@media screen and (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+
+/* GLOBAL ELEMENTS ------------------ */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+	@include breakpoint-min($md) {
+		font-size: percentage(18/16);
+	}
+}
+
+body {
+	color: $text;
+	font-family: Graphik, Helvetica, Arial, sans-serif;
+	line-height: $line-height;
+	background-color: $bg;
+}
+
+main {
+	max-width: $max-width;
+	padding: 0 1em 3em 1em;
+	margin: 0 auto;
+	@include breakpoint-min($lg) {
+		padding: 0;
+	}
+}
+
+section {
+	margin: 3em 0;
+	+ section {
+		padding-top: 3em;
+		border-top: 6px solid $fb-4;
+	}
+}
+
+p {
+	margin: 1em 0;
+}
+
+h1,
+h2,
+h3 {
+	color: $fb-1;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: $scale2;
+	line-height: $line-height-less;
+	margin-top: 1em;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h3 {
+	font-size: $scale1;
+	margin-top: 1em;
+	+ p {
+		margin-top: 0;
+	}
+}
+
+ul {
+	list-style: disc outside none;
+	margin: 1em 0 0 1.5em;
+}
+
+ol {
+	list-style: none;
+	margin: 1em 0 0 1.5em;
+	counter-reset: start-from 0; /* Initiate a counter */
+	li {
+		position: relative;
+		+ li {
+			margin-top: 0.5em;
+		}
+	}
+	li:before {
+		counter-increment: start-from; /* Increment the counter by 1 */
+		content: counter(start-from);  /* Use the counter as content */
+		display: block;
+		position: absolute;
+		left: -2em;
+		top: 0.2em;
+		font-size: $scale-1;
+		width: 1.5em;
+		height: 1.5em;
+		text-align: center;
+		color: $bg;
+		background-color: $fb-1;
+		border-radius: 0.75em;
+	}
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+em,
+cite {
+	font-style: italic;
+}
+
+strong {
+	color: $text-alt;
+	font-weight: bold;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 1px solid $fb-2;
+	transition: 0.2s;
+	&:hover,
+	&:focus {
+		color: $fb-2;
+		border-color: $fb-3;
+	}
+}
+
+
+/* HEADER --------------------------- */
+
+.site-header {
+	text-align: center;
+	background-color: $fb-3;
+}
+
+.site-header-inner {
+	max-width: $max-width * 1.5;
+	padding: $scale3 1em 0 1em;
+	margin: 0 auto;
+	@include breakpoint-min($md) {
+		padding-top: $scale5;
+	}
+	@include breakpoint-min($lg) {
+		padding-top: $scale6 0 0 0;
+	}
+}
+
+
+/* TITLE ---------------------------- */
+
+.site-title {
+	font-size: $scale4;
+	line-height: $line-height-least;
+	margin-bottom: 0.25em;
+	@include breakpoint-min($md) {
+		font-size: $scale5;
+	}
+	@include breakpoint-min($lg) {
+		font-size: $scale6;
+		margin-bottom: 0.5em;
+	}
+}
+
+
+/* DESCRIPTION / CALL TO ACTION ----- */
+
+.pitch {
+	margin: 1em 0 2em 0;
+	@include breakpoint-min($sm) {
+		margin-bottom: 2em;
+	}
+	@include breakpoint-min($md) {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	@include breakpoint-min($lg) {
+		margin-bottom: 3em;
+	}
+}
+
+
+/* DESCRIPTION ---------------------- */
+
+.site-description {
+	color: $text-alt;
+	font-size: $scale0;
+	font-weight: normal;
+	line-height: $line-height;
+	@include breakpoint-min($md) {
+		font-size: $scale1;
+		width: 60%;
+		text-align: left;
+		padding: 0 $scale1;
+		border-left: 1px solid $fb-2;
+	}
+}
+
+
+/* CALL TO ACTION ------------------- */
+
+.cta {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin: 2em 0;
+	@include breakpoint-min($md) {
+		width: 40%;
+		padding: 0 $scale1;
+		margin: 0;
+	}
+	.generic & {
+		@include breakpoint-range($sm,$md) {
+			flex-direction: row;
+		}
+	}
+	.firefox & {
+		flex-direction: column-reverse;
+	}
+	li {
+		flex-shrink: 0;
+		@include breakpoint-range($sm,$md) {
+			margin: 0 0.5em;
+		}
+	}
+}
+
+.button {
+	display: inline-block;
+	color: $bg;
+	text-decoration: none;
+	background-color: $text-alt;
+	padding: 0.5em 1em;
+	border: none;
+	border-radius: 0.25em;
+	&:hover,
+	&:focus {
+		color: $bg;
+		background-color: $fb-1;
+	}
+}
+
+.chrome .cta-chrome .button,
+.firefox .cta-firefox .button {
+	font-size: $scale1;
+}
+
+.chrome .cta-firefox .button,
+.firefox .cta-chrome .button {
+	color: $text-alt;
+	background-color: transparent;
+	padding: 0;
+	border-bottom: 1px solid $fb-2;
+	border-radius: 0;
+	&:before {
+		content: "or ";
+	}
+	&:hover,
+	&:focus {
+		color: $fb-1;
+	}
+}
+
+.generic .cta-firefox,
+.chrome .cta-firefox,
+.firefox .cta-chrome {
+	margin-top: 0.5em;
+}
+
+.generic .cta-firefox {
+	@include breakpoint-range($sm,$md) {
+		margin-top: 0;
+	}
+}
+
+
+/* NAVIGATION ----------------------- */
+
+.site-nav {
+	color: $fb-3;
+	text-align: center;
+	background-color: $fb-1;
+	padding: 0.5em 0;
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+	li {
+		@include breakpoint-min($sm) {
+			display: inline-block;
+		}
+	}
+	a {
+		display: block;
+		border: none;
+		@include breakpoint-min($sm) {
+			margin: 0 1em;
+		}
+		&:hover,
+		&:focus {
+			color: $bg;
+		}
+	}
+}
+
+
+/* HOW IT WORKS --------------------- */
+
+.what-we-collect {
+	background-color: $fb-4;
+	padding: 0.5em 0.5em 1.5em 0.5em;
+	margin: 2em 0;
+	@include breakpoint-min($sm) {
+		padding: $scale1;
+	}
+	@include breakpoint-min($lg) {
+		display: flex;
+		align-items: center;
+		width: $max-width * 1.5;
+		margin-left: -((($max-width * 1.5) - $max-width) / 2);
+		h3 {
+			margin-top: 0;
+		}
+	}
+	li:before {
+		background-color: $highlight;
+	}
+}
+
+.collect-image {
+	@include breakpoint-min($lg) {
+		width: 40%;
+		padding-right: $scale1;
+	}
+}
+
+.collect-text {
+	@include breakpoint-min($lg) {
+		width: 60%;
+		padding-left: $scale1;
+	}
+}
+
+
+/* WHY IT MATTERS ------------------- */
+
+#why-it-matters {
+	padding-top: 0;
+	border: none;
+}
+
+
+/* HOW TO START --------------------- */
+
+.generic .switch,
+.chrome #firefox-instructions,
+.firefox #chrome-instructions {
+	display: none;
+}
+
+.switch {
+	font-size: $scale-1;
+}
+
+.demo {
+	margin: 1em 0 2em 0;
+}
+
+
+/* FOOTER --------------------------- */
+
+.site-footer {
+	text-align: center;
+	background-color: $fb-3;
+	padding: 2em 1em 3em 1em;
+	margin: 3em auto 0 auto;
+	@include breakpoint-min($lg) {
+		margin-top: 6em;
+	}
+}
+
+.logo {
+	display: inline-block;
+	vertical-align: -0.2em;
+	width: 9em;
+	margin-left: 0.25em;
+	border: none;
+}
