@@ -117,9 +117,30 @@ h3 {
   h3 + p {
     margin-top: 0; }
 
-ul {
-  list-style: disc outside none;
-  margin: 1em 0 0 1.5em; }
+.collect-text ul {
+  list-style: none;
+  margin: 1em 0 0 1.5em;
+  counter-reset: start-from 0;
+  /* Initiate a counter */ }
+  .collect-text ul li {
+    position: relative;}
+    ul li + li {
+      margin-top: 0.5em; }
+  ul li:before {
+    counter-increment: start-from;
+    /* Increment the counter by 1 */
+    content: "";
+    /* Use the counter as content */
+    display: block;
+    position: absolute;
+    left: -2em;
+    top: 0.2em;
+    font-size: 0.75rem;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    background-color: #3b5998;
+    border-radius: 0.75em; }
 
 ol {
   list-style: none;
@@ -171,7 +192,8 @@ a {
 /* HEADER --------------------------- */
 .site-header {
   text-align: center;
-  background-color: #dfe3ee; }
+  
+}
 
 .site-header-inner {
   max-width: 60rem;
@@ -183,6 +205,21 @@ a {
   @media screen and (min-width: 70em) {
     .site-header-inner {
       padding-top: 3.8146972656rem 0 0 0; } }
+
+.site-header {
+    /* The image used */
+    background-image: url("../images/flag.jpg");
+
+    /* Set a specific height */
+    min-height: 200px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(223,227,238,.5);
+}
 
 /* TITLE ---------------------------- */
 .site-title {
@@ -254,13 +291,13 @@ a {
   display: inline-block;
   color: white;
   text-decoration: none;
-  background-color: red;
+  background-color: #f33;
   padding: 0.5em 1em;
   border: none;
   border-radius: 0.25em; }
   .button:hover, .button:focus {
     color: white;
-    background-color: #3b5998; }
+    background-color: #ef1313; }
 
 .chrome .cta-chrome .button,
 .firefox .cta-firefox .button {
