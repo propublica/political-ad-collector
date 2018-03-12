@@ -172,6 +172,10 @@ img {
   display: block;
   width: 100%; }
 
+img.small {
+  width: 70%;
+}
+
 em,
 cite {
   font-style: italic; }
