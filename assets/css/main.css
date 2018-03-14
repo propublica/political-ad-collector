@@ -176,6 +176,10 @@ img.small {
   width: 70%;
 }
 
+img.corner {
+  width: 50%;
+}
+
 em,
 cite {
   font-style: italic; }
