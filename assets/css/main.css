@@ -290,14 +290,14 @@ a {
       margin: 0; } }
   @media screen and (min-width: 30em) and (max-width: 50em) {
     .generic .cta {
-      flex-direction: row; } }
+      flex-direction: column; } }
   .firefox .cta {
     flex-direction: column-reverse; }
   .cta li {
     flex-shrink: 0; }
     @media screen and (min-width: 30em) and (max-width: 50em) {
       .cta li {
-        margin: 0 0.5em; } }
+        margin: 0.5em; } }
 
 .button {
   display: inline-block;
