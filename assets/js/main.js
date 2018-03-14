@@ -7,19 +7,15 @@ function switcher() {
   if(navigator.userAgent.indexOf("Chrome") != -1 ) {
     console.log("chrome");
       $('body').removeClass().addClass('chrome');
-      $('#big-download').text('Download For Chrome');
-      $('#big-download').attr('href', chromeLink);
       $('.chrome').show();
       $('.firefox').hide();
   } else if(navigator.userAgent.indexOf("Firefox") != -1 ) {
       $('body').removeClass().addClass('firefox');
-      $('#big-download').text('Download For Firefox');
-      $('#big-download').attr('href', firefoxLink);
       $('#firefox').prependTo('#instructions');
       $('.firefox').show();
       $('.chrome').hide();
   } else {
-     $('#big-download').hide();
+     $('.unsupported').show();
   }
 }
 

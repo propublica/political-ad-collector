@@ -168,6 +168,10 @@ ol {
     background-color: #3b5998;
     border-radius: 0.75em; }
 
+.unsupported {
+  display: none;
+}
+
 img {
   display: block;
   width: 100%; }
