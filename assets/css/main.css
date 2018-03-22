@@ -220,7 +220,7 @@ a {
 
 .site-header {
     /* The image used */
-    background-image: url("../images/flag.jpg");
+    /*background-image: url("../images/flag.jpg");*/
 
     /* Set a specific height */
     min-height: 200px; 
