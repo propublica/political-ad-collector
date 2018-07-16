@@ -295,6 +295,9 @@ a {
 .chrome .cta-chrome .button,
 .firefox .cta-firefox .button {
 	font-size: $scale1;
+	&:before {
+		content: "+ ";
+	}
 }
 
 .chrome .cta-firefox .button,
