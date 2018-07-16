@@ -314,6 +314,9 @@ a {
 .chrome .cta-chrome .button,
 .firefox .cta-firefox .button {
   font-size: 1.25rem; }
+.firefox .cta-firefox .button:before,
+.chrome .cta-chrome .button:before {
+  content: "+ "; }
 
 .chrome .cta-firefox .button,
 .firefox .cta-chrome .button {
